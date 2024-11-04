@@ -33,9 +33,9 @@ export default function SingleSelectScreen({
     dispatch(saveAnswer(newAnswer));
 
     if (option.nextQuestionId) {
-      setTimeout(() => {
+      // setTimeout(() => {
         router.push(`/questions/${option.nextQuestionId}`);
-      }, 500);
+      // }, 500);
     } else {
       router.push("/result");
     }
