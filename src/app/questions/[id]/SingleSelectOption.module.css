@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #E0E0E0;
+  border-radius: 16px;
+  background: #EAEEF7;
+  font-weight: 100;
+  padding: 20px 12px;
+  box-shadow: 2px 2px 6px 0px #543C9740;
+  cursor: pointer;
+  transition: background 1s;
+}
+
+.container:active {
+  background: #EAEEF7;
+}
+
+.container.active {
+  background: linear-gradient(180deg, #141333 -40%, #202261 15%, #543C97 55%, #6939A2 75%);
+  color: #FBFBFF;
+}
+

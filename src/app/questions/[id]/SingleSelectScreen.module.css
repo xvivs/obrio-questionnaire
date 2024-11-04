@@ -1,0 +1,50 @@
+.wrapper {
+  min-height: 100vh;
+  background-color: #FFF0F0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.question {
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.options {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+.header {
+  padding: 20px 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.backButton {
+  position: absolute;
+  left: 5%;
+  cursor: pointer;
+}
+
+.logo {
+  width: 16px;
+  height: 16px;
+  background-image: url('/logo-black.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0%;
+  cursor: pointer;
+}
+
+.main {
+  max-width: 328px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
