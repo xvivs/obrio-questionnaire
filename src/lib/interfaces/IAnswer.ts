@@ -1,5 +1,6 @@
 export default interface IAnswer {
   id: string;
   questionId: string;
-  value: string;
+  questionText: string;
+  text: string;
 }

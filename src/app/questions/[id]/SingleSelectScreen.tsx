@@ -1,45 +1,56 @@
 "use client";
 
 import IQuestion from "@/lib/interfaces/IQuestion";
-import React, { useState } from "react";
-import Svg from "next-svg";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
-import styles from "./SingleSelectScreen.module.css";
+import IQuestionOption from "@/lib/interfaces/IQuestionOption";
+import { useAppDispatch } from "@/lib/store/hook";
+import ScreenHeader from "./ScreenHeader";
 import SingleSelectOption from "./SingleSelectOption";
-import Image from "next/image";
+import styles from "./SingleSelectScreen.module.css";
+import IAnswer from "@/lib/interfaces/IAnswer";
+import { saveAnswer } from "@/lib/store/slices/questionnaireSlice";
 
 export default function SingleSelectScreen({
   question,
 }: {
   question: IQuestion;
 }) {
+  const router = useRouter();
+  const dispatch = useAppDispatch();
   const [selectedOptionId, setSelectedOptionId] = useState("");
+  const onAnswserSelected = (option: IQuestionOption) => {
+    setSelectedOptionId(option.id);
+
+    const newAnswer: IAnswer = {
+      id: option.id,
+      text: option.text,
+      questionId: question.id,
+      questionText: question.text,
+    };
+
+    dispatch(saveAnswer(newAnswer));
+
+    if (option.nextQuestionId) {
+      setTimeout(() => {
+        router.push(`/questions/${option.nextQuestionId}`);
+      }, 500);
+    } else {
+      router.push("/result");
+    }
+  };
 
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
-        <header className={styles.header}>
-          <svg
-            width="10"
-            height="16"
-            className={styles.backButton}
-            viewBox="0 0 10 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M0.5 8L8 0.5L9.05 1.55L2.6 8L9.05 14.45L8 15.5L0.5 8Z"
-              fill="#333333"
-            />
-          </svg>
-          <div className={styles.logo}></div>
-        </header>
+        <ScreenHeader screenType={question.screenType} />
         <main className={styles.main}>
           <h2 className={styles.question}>{question.text}</h2>
           <div className={styles.options}>
-            {question.options.map((option) => (
+            {question.options!.map((option) => (
               <SingleSelectOption
-                onClick={() => setSelectedOptionId(option.id)}
+                onClick={() => onAnswserSelected(option)}
                 isActive={option.id === selectedOptionId}
                 key={option.id}
                 option={option}

@@ -1,0 +1,19 @@
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.listItem {
+  padding: 10px;
+  border: 1px solid #E0E0E0;
+  border-radius: 16px;
+  background: #EAEEF7;
+  font-weight: 100;
+  line-height: 25px;
+  font-size: 14px;
+}
