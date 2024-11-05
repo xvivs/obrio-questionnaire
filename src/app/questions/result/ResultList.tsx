@@ -1,20 +1,20 @@
 'use client';
 
-import { useAppSelector } from '@/lib/store/hook';
 import React from 'react';
 
 import styles from './ResultList.module.css';
+import useUserAnswers from '@/lib/hooks/useUserAnswers';
 
 const ResultList = () => {
-  const answers = useAppSelector((state) => state.questionaire.answers);
+  const answers = useUserAnswers();
 
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
       {answers.map((answer) => (
-        <div key={answer.text} className={styles.listItem}>
-          <h2 key={answer.id}>{answer.questionText}</h2>
-          <p>{answer.text}</p>
+        <div key={answer.id} className={styles.listItem}>
+          <h2 key={answer.id}>{answer.questionContent}</h2>
+          <p>{answer.content}</p>
         </div>
       ))}
       </div>

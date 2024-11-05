@@ -1,7 +1,6 @@
 import IAnswer from "@/lib/interfaces/IAnswer";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-
 export interface QuestionnaireState {
   answers: IAnswer[];
 }
@@ -18,19 +17,19 @@ export const questionnaireSlice = createSlice({
       const existingAnswer = state.answers.find(answer => answer.questionId === action.payload.questionId);
       
       if (existingAnswer) {
-        existingAnswer.text = action.payload.text;
+        existingAnswer.content = action.payload.content;
         existingAnswer.id = action.payload.id;
       } else {
         state.answers.push(action.payload);
       }
     },
-    resetAnswers: (state) => {
-      state.answers = [];
-    },
+    removeDependentAnswers: (state, action: PayloadAction<string[]>) => {
+      state.answers = state.answers.filter(answer => !action.payload.includes(answer.questionId));
+    }
   }
 });
 
-export const { saveAnswer, resetAnswers } = questionnaireSlice.actions;
+export const { saveAnswer, removeDependentAnswers } = questionnaireSlice.actions;
 
 export default questionnaireSlice.reducer;
 

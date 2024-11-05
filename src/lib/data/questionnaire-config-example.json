@@ -1,0 +1,242 @@
+[
+  {
+    "id": "1",
+    "screenType": "single-select",
+    "content": "Select your gender:",
+    "options": [
+      { "id": "q1af", "content": "Female" },
+      { "id": "q1am", "content": "Male" }
+    ],
+    "next": "2"
+  },
+  {
+    "id": "2",
+    "screenType": "single-select",
+    "content": "So we can get to know you better, tell us about your relationship status.",
+    "options": [
+      { "id": "q2as", "content": "Single", "next": "3" },
+      { "id": "q2ar", "content": "In a relationship", "next": "4" }
+    ],
+    "dependentQuestionIds": ["3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "15"]
+  },
+  {
+    "id": "3",
+    "screenType": "single-select",
+    "content": "Are you a single parent?",
+    "options": [
+      { "id": "q3ay", "content": "Yes" },
+      { "id": "q3an", "content": "No" }
+    ],
+    "next": "6"
+  },
+  {
+    "id": "4",
+    "screenType": "single-select",
+    "content": "Are you a parent?",
+    "options": [
+      {  "id": "q4ay", "content": "Yes" },
+      { "id": "q4an", "content": "No" }
+    ],
+    "next": "5"
+  },
+  {
+    "id": "5",
+    "screenType": "single-select",
+    "content": [
+      {
+        "conditions": [
+          { "questionId": "1", "answerId": "q1am" },
+          { "questionId": "4", "answerId": "q4ay" }
+        ],
+        "content": "Male who have children need a slightly different approach to improve their relationship. Which statement best describes you?"
+      },
+      {
+        "conditions": [
+          { "questionId": "1", "answerId": "q1af" },
+          { "questionId": "4", "answerId": "q4ay" }
+        ],
+        "content": "Female who have children need a slightly different approach to improve their relationship. Which statement best describes you?"
+      },
+      {
+        "conditions": [
+          { "questionId": "1", "answerId": "q1am" },
+          { "questionId": "4", "answerId": "q4an" }
+        ],
+        "content": "Male need a slightly different approach to improve their relationship. Which statement best describes you?"
+      },
+      {
+        "conditions": [
+          { "questionId": "1", "answerId": "q1af" },
+          { "questionId": "4", "answerId": "q4an" }
+        ],
+        "content": "Female need a slightly different approach to improve their relationship. Which statement best describes you?"
+      }
+    ],
+    "options": [
+      { "id": "q5afullun", "content": "I’m very unhappy with how things are going in my relationship" },
+      { "id": "q5apartun", "content": "I’m unhappy with parts of my relationship, but some things are working well" },
+      { "id": "q5ahappy", "content": "I’m unhappy with parts of my relationship, but some things are working well" }
+    ],
+    "next": "8"
+  },
+  {
+    "id": "6",
+    "screenType": "single-select",
+    "content": [
+      {
+        "conditions": [
+          { "questionId": "1", "answerId": "q1am" },
+          { "questionId": "3", "answerId": "q3ay" }
+        ],
+        "content": "Single male who have children need a slightly different approach to find their perfect partner. But first, how did you feel in your last relationship?"
+      },
+      {
+        "conditions": [
+         { "questionId": "1", "answerId": "q1af" },
+         { "questionId": "3", "answerId": "q3ay" } 
+        ],
+        "content": "Single female who have children need a slightly different approach to find their perfect partner. But first, how did you feel in your last relationship?"
+      },
+      {
+        "conditions": [
+          { "questionId": "1", "answerId": "q1am" },
+          { "questionId": "3", "answerId": "q3an" }
+        ],
+        "content": "Single male need a slightly different approach to find their perfect partner. But first, how did you feel in your last relationship?"
+      },
+      {
+        "conditions": [
+          { "questionId": "1", "answerId": "q1af" },
+          { "questionId": "3", "answerId": "q3an" }
+        ],
+        "content": "Single female need a slightly different approach to find their perfect partner. But first, how did you feel in your last relationship?"
+      }
+    ],
+    "options": [
+      { "id": "q6aunhappy", "content": "I was unhappy with low things were going in my relationship" },
+      { "id": "q6apartun", "content": "I was unhappy with parts of my relationship, but some thing were working" },
+      { "id": "q6ahappyrel", "content": "I was generally happy with my relationship" },
+      { "id": "q6anorel", "content": "I’ve never been in a relationship" }
+    ],
+    "next": "7"
+  },
+  {
+    "id": "7",
+    "screenType": "single-select",
+    "content": "Do you tend to overthink?",
+    "options": [
+      {  "id": "q7ay", "content": "Yes" },
+      { "id": "q7an", "content": "No" }
+    ],
+    "next": "9",
+    "dependentQuestionIds": ["10", "11"]
+  },
+  {
+    "id": "8",
+    "screenType": "single-select",
+    "content": "Is your partner an introvert or extrovert?",
+    "options": [
+      {  "id": "q9ai", "content": "Introvert" },
+      { "id": "q9ae", "content": "Extrovert" },
+      { "id": "q9ab", "content": "A bit of both" }
+    ],
+    "next": "12"
+  },
+  {
+    "id": "9",
+    "screenType": "info",
+    "content": "So how does it work?",
+    "subcontent": "We analyze hundreds of data points to create your unique astrological blueprint. This is combined with AI to tailor-make your astrological insights, based on your answers. We’re going to change your relationship with astrology.",
+    "next": {
+      "conditional": {
+        "questionId": "7",
+        "answers": {
+          "q7ay": "10",
+          "q7an": "11"
+        }
+      }
+    }
+  },
+  {
+    "id": "10",
+    "screenType": "single-select",
+    "content": "What is most important to you?",
+    "options": [
+      {  "id": "q10suc", "content": "Success" },
+      { "id": "q10rom", "content": "Romance" },
+      { "id": "q10stab", "content": "Stability" },
+      { "id": "q10freed", "content": "Freedom" }
+    ],
+    "next": "15"
+  },
+  {
+    "id": "11",
+    "screenType": "single-select",
+    "content": "Is emotional control tricky for you?",
+    "options": [
+      {  "id": "q11y", "content": "Yes" },
+      { "id": "q11some", "content": "Sometimes" },
+      { "id": "q11rar", "content": "Rarely" },
+      { "id": "q11not", "content": "Not at all" }
+    ],
+    "next": "15"
+  },
+  {
+    "id": "12",
+    "screenType": "single-select",
+    "content": "What is your partner’s gender?",
+    "options": [
+      {  "id": "q12am", "content": "Male" },
+      { "id": "q12af", "content": "Female" }
+    ],
+    "next": "13"
+  },
+  {
+    "id": "13",
+    "screenType": "single-select",
+    "content": "Do you agree with the statement below?",
+    "subcontent": "“My partner and I make sex a priority in our relationship”",
+    "options": [
+      {  "id": "q13asa", "content": "Strongly agree" },
+      {  "id": "q13aa", "content": "Agree" },
+      {  "id": "q13an", "content": "Neutral" },
+      {  "id": "q13ad", "content": "Disagree" },
+      {  "id": "q13asd", "content": "Strongly disagree" }
+    ],
+    "next": "14"
+  },
+  {
+    "id": "14",
+    "screenType": "single-select",
+    "content": "When you think about your relationship goals, you feel...?",
+    "options": [
+      {  "id": "q14aopt", "content": "Optimistic! They are totally doable, with some guidance." },
+      {  "id": "q14acaut", "content": "Cautious. I’ve struggled before, but I’m hopeful." },
+      {  "id": "q14aanxi", "content": "I’m feeling a little anxious, honestly." }
+    ],
+    "next": "15"
+  },
+  {
+    "id": "15",
+    "screenType": "single-select",
+    "content": "Where did you hear about us?",
+    "options": [
+      {  "id": "q15aposter", "content": "Poster or Billboard" },
+      {  "id": "q15afriend", "content": "Friend or Family" },
+      {  "id": "q15ainsta", "content": "Instagram" },
+      {  "id": "q15adirect", "content": "Direct Mail or Package Insert" },
+      {  "id": "q15aonline", "content": "Online TV or Streaming TV" },
+      {  "id": "q15atv", "content": "TV" },
+      {  "id": "q15aradio", "content": "Radio" },
+      {  "id": "q15asearch", "content": "Search Engine (Google, Bing, etc.)" },
+      {  "id": "q15anewspaper", "content": "Newspaper or Magazine" },
+      {  "id": "q15afbook", "content": "Facebook" },
+      {  "id": "q15ablog", "content": "Blog Post or Website Review" },
+      {  "id": "q15apodcast", "content": "Podcast" },
+      {  "id": "q15ainflu", "content": "Influencer" },
+      {  "id": "q15ayoutube", "content": "Youtube" },
+      {  "id": "q15apinterest", "content": "Pinterest" },
+      {  "id": "q15aother", "content": "Other" }
+    ]
+  }
+]

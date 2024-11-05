@@ -1,7 +1,7 @@
 import IQuestion from '@/lib/interfaces/IQuestion';
 import React from 'react';
-import SingleSelectScreen from './SingleSelectScreen';
-import InfoScreen from './InfoScreen';
+import SingleSelectScreen from '@/components/SingleSelectScreen';
+import InfoScreen from '@/components/InfoScreen';
 
 export async function generateStaticParams() {
   const questions: IQuestion[] = await fetch('http://localhost:3000/api/questions').then((res) => res.json());
@@ -24,5 +24,5 @@ export default async function QuestionsPage({ params }: { params: { id: string }
   if(question.screenType === "single-select") return <SingleSelectScreen question={question} />;
   if(question.screenType === 'info') return <InfoScreen question={question} />;
 
-  return <div>Something went wrong, try again later</div>;
+  return <div>Something went wrong, world is not ideal, but we are working on it.</div>;
 };

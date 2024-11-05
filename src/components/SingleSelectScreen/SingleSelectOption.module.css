@@ -9,11 +9,11 @@
   padding: 20px 12px;
   box-shadow: 2px 2px 6px 0px #543C9740;
   cursor: pointer;
-  transition: background 1s;
 }
 
 .container:active {
-  background: #EAEEF7;
+  background: linear-gradient(180deg, #141333 -40%, #202261 15%, #543C97 55%, #6939A2 75%);
+  color: #FBFBFF;
 }
 
 .container.active {

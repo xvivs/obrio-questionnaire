@@ -8,9 +8,17 @@
   margin: 0 auto;
 }
 
-.question {
+.content {
   margin-bottom: 30px;
   font-weight: 600;
+  text-align: center;
+}
+
+.subcontent {
+  width: 80%;
+  margin: 0 auto 30px auto;
+  font-weight: 600;
+  text-align: center;
 }
 
 .options {

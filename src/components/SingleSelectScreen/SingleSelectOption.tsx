@@ -15,7 +15,7 @@ export default function SingleSelectOption ({ option, isActive, onClick }: IProp
 
   return (
     <div className={className} onClick={onClick}>
-      {option.text}
+      {option.content}
     </div>
   )
 }

@@ -7,7 +7,7 @@ const ResultPage = () => {
 
   return (
     <div className={styles.wrapper}>
-      <h2 className={styles.title}>Let's review what we've got?</h2>
+      <h2 className={styles.title}>Let&apos;s review what we&apos;ve got?</h2>
       <ResultList />
     </div>
   )

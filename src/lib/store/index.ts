@@ -1,16 +1,16 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import questionaireReducer from './slices/questionnaireSlice';
+import questionnaireReducer from './slices/questionnaireSlice';
 import storage from "./ssr-safe-storage";
 import { persistReducer, FLUSH, PAUSE, REHYDRATE, REGISTER, PERSIST, PURGE } from "redux-persist";
 
 const rootReducer = combineReducers({
-  questionaire: questionaireReducer
+  questionnaire: questionnaireReducer
 });
 
 const persistConfig = {
   key: 'persistedState',
   storage,
-  whitelist: ['questionaire']
+  whitelist: ['questionnaire']
 }
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

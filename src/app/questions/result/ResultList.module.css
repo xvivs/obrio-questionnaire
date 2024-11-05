@@ -3,6 +3,7 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  align-items: baseline;
   gap: 20px;
   padding: 20px;
 }
@@ -15,4 +16,10 @@
   font-weight: 100;
   line-height: 25px;
   font-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
 }
