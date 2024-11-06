@@ -14,8 +14,10 @@ export const questionnaireSlice = createSlice({
   initialState,
   reducers: {
     saveAnswer: (state, action: PayloadAction<IAnswer>) => {
-      const existingAnswer = state.answers.find(answer => answer.questionId === action.payload.questionId);
-      
+      const existingAnswer = state.answers.find(
+        (answer) => answer.questionId === action.payload.questionId,
+      );
+
       if (existingAnswer) {
         existingAnswer.content = action.payload.content;
         existingAnswer.id = action.payload.id;
@@ -24,14 +26,14 @@ export const questionnaireSlice = createSlice({
       }
     },
     removeDependentAnswers: (state, action: PayloadAction<string[]>) => {
-      state.answers = state.answers.filter(answer => !action.payload.includes(answer.questionId));
-    }
-  }
+      state.answers = state.answers.filter(
+        (answer) => !action.payload.includes(answer.questionId),
+      );
+    },
+  },
 });
 
-export const { saveAnswer, removeDependentAnswers } = questionnaireSlice.actions;
+export const { saveAnswer, removeDependentAnswers } =
+  questionnaireSlice.actions;
 
 export default questionnaireSlice.reducer;
-
-
-

@@ -18,7 +18,7 @@ Ensure you have the following installed on your machine:
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/yourusername/obrio-questionnaire.git
+   git clone https://github.com/xvivs/obrio-questionnaire.git
    cd obrio-questionnaire
    ```
 
@@ -56,32 +56,12 @@ To build and run the application in production:
    npm start
    ```
 
-3. Open your browser and navigate to your server's address to view the application.
-
-### Linting
-
-To maintain code quality, run the linter:
-
-```bash
-npm run lint
-```
+3. Open your browser and navigate to to `http://localhost:3000` (or server's address shown is in your terminal, if 3000 is currently busy).
 
 ### Folder Structure
 
 - **`src/`**: Contains the source code for the application.
 - **`public/`**: Static files served by the app.
 - **`src/app`**: Contains the Next.js pages.
-- **`components/`**: Reusable React components.
-- **`lib/`**: Utility functions and configuration.
-
-### Further Reading
-
-For more detailed documentation, visit the [Next.js documentation](https://nextjs.org/docs).
-
-### License
-
-This project is licensed under the MIT License.
-
----
-
-Feel free to contribute to this project by submitting a pull request or opening an issue if you encounter any problems or have feature suggestions.
+- **`src/components/`**: Reusable React components.
+- **`src/lib/`**: Utility functions, hooks, types, interfaces, questionnaire config data.

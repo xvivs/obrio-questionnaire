@@ -6,11 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.3.0",
-    "next": "15.0.2",
+    "eslint-plugin-next": "^0.0.0",
+    "framer-motion": "^11.11.11",
+    "next": "^15.0.2",
     "next-svg": "^1.0.7",
     "react": "18.2",
     "react-dom": "18.2",
@@ -18,12 +21,19 @@
     "redux-persist": "^6.0.0"
   },
   "devDependencies": {
+    "@eslint/js": "^9.14.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@types/redux-persist": "^4.3.1",
-    "eslint": "^8",
+    "eslint": "^8.57.1",
     "eslint-config-next": "15.0.2",
-    "typescript": "^5"
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react": "^7.37.2",
+    "globals": "^15.12.0",
+    "prettier": "3.3.3",
+    "typescript": "^5",
+    "typescript-eslint": "^8.13.0"
   }
 }

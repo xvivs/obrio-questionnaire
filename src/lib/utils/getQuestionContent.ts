@@ -10,19 +10,24 @@ import IQuestion from "../interfaces/IQuestion";
  * @param userAnswers The user's answers
  * @returns The content of the question
  */
-export default function getQuestionContent(question: IQuestion, userAnswers: IAnswer[]) {
-  if (typeof question.content === 'string') {
+export default function getQuestionContent(
+  question: IQuestion,
+  userAnswers: IAnswer[],
+) {
+  if (typeof question.content === "string") {
     return question.content;
   }
 
   for (const condition of question.content) {
     const conditionMet = condition.conditions.every((con) => {
-      const userAnswer = userAnswers.find((answer) => answer.questionId === con.questionId);
+      const userAnswer = userAnswers.find(
+        (answer) => answer.questionId === con.questionId,
+      );
       return userAnswer?.id === con.answerId;
     });
 
     if (conditionMet) return condition.content;
-  };
+  }
 
-  return 'Some error occured, please connect our support team. World is not ideal, but we are working on it.';
+  return "Some error occured, please connect our support team. World is not ideal, but we are working on it.";
 }

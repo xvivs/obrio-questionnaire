@@ -1,29 +1,38 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import questionnaireReducer from './slices/questionnaireSlice';
+import questionnaireReducer from "./slices/questionnaireSlice";
 import storage from "./ssr-safe-storage";
-import { persistReducer, FLUSH, PAUSE, REHYDRATE, REGISTER, PERSIST, PURGE } from "redux-persist";
+import {
+  persistReducer,
+  FLUSH,
+  PAUSE,
+  REHYDRATE,
+  REGISTER,
+  PERSIST,
+  PURGE,
+} from "redux-persist";
 
 const rootReducer = combineReducers({
-  questionnaire: questionnaireReducer
+  questionnaire: questionnaireReducer,
 });
 
 const persistConfig = {
-  key: 'persistedState',
+  key: "persistedState",
   storage,
-  whitelist: ['questionnaire']
-}
+  whitelist: ["questionnaire"],
+};
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const makeStore = () => {
   return configureStore({
     reducer: persistedReducer,
-    devTools: process.env.NODE_ENV !== 'production',
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware({
-      serializableCheck: {
-        ignoredActions: [FLUSH, PAUSE, REGISTER, REHYDRATE, PERSIST, PURGE]
-      }
-    })
+    devTools: process.env.NODE_ENV !== "production",
+    middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware({
+        serializableCheck: {
+          ignoredActions: [FLUSH, PAUSE, REGISTER, REHYDRATE, PERSIST, PURGE],
+        },
+      }),
   });
 };
 

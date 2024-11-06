@@ -8,11 +8,16 @@
   padding: 20px;
 }
 
+.question {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
 .listItem {
   padding: 10px;
-  border: 1px solid #E0E0E0;
+  border: 1px solid #e0e0e0;
   border-radius: 16px;
-  background: #EAEEF7;
+  background: #eaeef7;
   font-weight: 100;
   line-height: 25px;
   font-size: 14px;

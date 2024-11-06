@@ -2,22 +2,33 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #E0E0E0;
+  border: 1px solid #e0e0e0;
   border-radius: 16px;
-  background: #EAEEF7;
+  background: #eaeef7;
   font-weight: 100;
   padding: 20px 12px;
-  box-shadow: 2px 2px 6px 0px #543C9740;
+  box-shadow: 2px 2px 6px 0px #543c9740;
   cursor: pointer;
 }
 
 .container:active {
-  background: linear-gradient(180deg, #141333 -40%, #202261 15%, #543C97 55%, #6939A2 75%);
-  color: #FBFBFF;
+  background: linear-gradient(
+    180deg,
+    #141333 -40%,
+    #202261 15%,
+    #543c97 55%,
+    #6939a2 75%
+  );
+  color: #fbfbff;
 }
 
 .container.active {
-  background: linear-gradient(180deg, #141333 -40%, #202261 15%, #543C97 55%, #6939A2 75%);
-  color: #FBFBFF;
+  background: linear-gradient(
+    180deg,
+    #141333 -40%,
+    #202261 15%,
+    #543c97 55%,
+    #6939a2 75%
+  );
+  color: #fbfbff;
 }
-

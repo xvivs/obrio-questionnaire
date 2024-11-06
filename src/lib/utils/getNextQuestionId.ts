@@ -25,17 +25,25 @@ import IQuestionOption from "../interfaces/IQuestionOption";
  * @param selectedOption The option the user selected for the current question
  * @returns The ID of the next question to ask, or `null` if there is no next question
  */
-export default function useNextQuestionId(question: IQuestion, userAnswers: IAnswer[], selectedOption?: IQuestionOption): string | null {
-  if(selectedOption?.next) {
+export default function useNextQuestionId(
+  question: IQuestion,
+  userAnswers: IAnswer[],
+  selectedOption?: IQuestionOption,
+): string | null {
+  if (selectedOption?.next) {
     return selectedOption.next;
   }
-  
-  if (question.next) {
-    if (typeof question.next === 'object' && question.next.conditional) {
-      const conditionalQuestionId = question.next.conditional.questionId;
-      const { id: answerId } = userAnswers.find(answer => answer.questionId === conditionalQuestionId)!;
 
-      return question.next.conditional.answers[answerId] || question.next.default;
+  if (question.next) {
+    if (typeof question.next === "object" && question.next.conditional) {
+      const conditionalQuestionId = question.next.conditional.questionId;
+      const { id: answerId } = userAnswers.find(
+        (answer) => answer.questionId === conditionalQuestionId,
+      )!;
+
+      return (
+        question.next.conditional.answers[answerId] || question.next.default
+      );
     } else {
       return question.next as unknown as string;
     }

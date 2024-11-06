@@ -1,21 +1,21 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { useRouter } from 'next/navigation';
-import styles from './BackButton.module.css';
+import React from "react";
+import { useRouter } from "next/navigation";
+import styles from "./BackButton.module.css";
 
 interface IProps {
   hexColor: string;
   className?: string;
 }
 
-const BackButton = ({ hexColor, className = '' }: IProps) => {
+const BackButton = ({ hexColor, className = "" }: IProps) => {
   const router = useRouter();
 
   return (
-    <div 
-      onClick={() => router.back()} 
-      className={styles.backButton + ' ' + className}
+    <div
+      onClick={() => router.back()}
+      className={styles.backButton + " " + className}
     >
       <svg
         width="10"
@@ -30,7 +30,7 @@ const BackButton = ({ hexColor, className = '' }: IProps) => {
         />
       </svg>
     </div>
-  )
-}
+  );
+};
 
-export default BackButton
+export default BackButton;

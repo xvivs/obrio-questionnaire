@@ -1,6 +1,6 @@
 .wrapper {
   min-height: 100vh;
-  background-color: #FFF0F0;
+  background-color: #fff0f0;
 }
 
 .container {
@@ -21,11 +21,7 @@
   text-align: center;
 }
 
-.options {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 15px;
-}
+
 
 .main {
   max-width: 328px;

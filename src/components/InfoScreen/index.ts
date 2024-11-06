@@ -1,1 +1,1 @@
-export { default } from './InfoScreen';
+export { default } from "./InfoScreen";

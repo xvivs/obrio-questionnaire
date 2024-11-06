@@ -3,5 +3,5 @@ export default interface INextQuestionCondition {
   conditional: {
     questionId: string;
     answers: Record<string, string>;
-  }
+  };
 }

@@ -1,1 +1,1 @@
-export { default } from './SingleSelectScreen';
+export { default } from "./SingleSelectScreen";

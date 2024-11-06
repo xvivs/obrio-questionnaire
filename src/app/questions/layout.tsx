@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "../globals.css";
+import { StoreProvider } from "@/lib/store/StoreProvider";
 
 export const metadata: Metadata = {
-  title: "Nebula Questionnaire",
+  title: "Nebula Question",
   description: "A quick quiz to get to know the client more deeper",
 };
 
@@ -12,10 +13,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>
-        {children}
-      </body>
-    </html>
+    <StoreProvider>{children}</StoreProvider>
   );
 }

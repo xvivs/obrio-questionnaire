@@ -1,1 +1,1 @@
-export * from './ScreenType';
+export * from "./ScreenType";
